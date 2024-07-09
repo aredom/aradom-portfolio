@@ -50,9 +50,9 @@ export default function Navbar() {
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
-              <a href="#" className="flex items-center py-4 px-2">
+              <Link href="#" className="flex items-center py-4 px-2">
                 <span className="font-semibold text-gray-500 text-lg">AradomL.</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-1">
