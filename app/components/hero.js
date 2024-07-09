@@ -8,7 +8,7 @@ const TypedText = dynamic(() => import('./TypedText'), { ssr: false });
 
 export default function Hero() {
   return (
-    <section className="bg-gray-800 text-white py-20" id="home">
+    <section className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between md:px-20">
           <div className="md:w-1/2 mb-8 md:mb-0">
