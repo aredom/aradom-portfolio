@@ -56,7 +56,7 @@ export default function Contact() {
       console.log("Response data:", data);
 
       if (response.ok) {
-        setSubmitMessage("Message received!<br />I'll be in touch soon.");
+        setSubmitMessage("Message received! I'll be in touch soon.");
         setFormData({
           name: "",
           email: "",
