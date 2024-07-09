@@ -1,6 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 const navItems = [
   { name: 'Home', href: '/#' },
@@ -14,7 +17,13 @@ const navItems = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('/#');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleCollapse = () => {
+    setExpanded(!expanded);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,23 +78,21 @@ export default function Navbar() {
             ))}
           </div>
           <div className="md:hidden flex items-center">
-            <button className="outline-none mobile-menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <svg
-                className="w-6 h-6 text-gray-500 hover:text-blue-500"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+            <button 
+              className="outline-none mobile-menu-button" 
+              onClick={toggleCollapse}
+            >
+              <span className="navbar-toggler-icon">
+                <FontAwesomeIcon
+                  icon={expanded ? faTimes : faBars}
+                  className="w-6 h-6 text-gray-500 hover:text-blue-500"
+                />
+              </span>
             </button>
           </div>
         </div>
       </div>
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`md:hidden ${expanded ? 'block' : 'hidden'}`}>
         <ul>
           {navItems.map((item) => (
             <li key={item.name}>
@@ -94,7 +101,10 @@ export default function Navbar() {
                 className={`block py-2 px-4 text-sm hover:bg-gray-200 ${
                   activeSection === item.href ? 'bg-gray-200' : ''
                 }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setExpanded(false);
+                  // Any other onClick logic you want to keep
+                }}
               >
                 {item.name}
               </Link>
