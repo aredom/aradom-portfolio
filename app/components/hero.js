@@ -2,15 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebookF, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faFacebookF, faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const TypedText = dynamic(() => import('./TypedText'), { ssr: false });
 
 export default function Hero() {
   return (
-    <section className="bg-gray-800 text-white py-20">
+    <section className="bg-gray-800 text-white py-20" id="home">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between md:px-20">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image 
               src="/images/my-profile.jpg" 
@@ -28,10 +28,18 @@ export default function Hero() {
             <p className="text-xl mb-6">Turning ideas into reality through code and design.</p>
             
             <div className="flex justify-center md:justify-start space-x-4 mb-8">
+              <Link href="#">
               <FontAwesomeIcon icon={faTwitter} className="text-gray-300 hover:text-white w-6 h-6" />
+              </Link>
+              <Link href="#">
               <FontAwesomeIcon icon={faFacebookF} className="text-gray-300 hover:text-white w-6 h-6" />
-              <FontAwesomeIcon icon={faLinkedinIn} className="text-gray-300 hover:text-white w-6 h-6" />
-              <FontAwesomeIcon icon={faInstagram} className="text-gray-300 hover:text-white w-6 h-6" />
+              </Link>
+              <Link href="https://wa.me/+251940677928" target="blank">
+              <FontAwesomeIcon icon={faWhatsapp} className="text-gray-300 hover:text-white w-6 h-6" />
+              </Link>
+              <Link href="https://t.me/AradomL" target='blank'>
+              <FontAwesomeIcon icon={faTelegram} className="text-gray-300 hover:text-white w-6 h-6" />
+              </Link>
             </div>
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">

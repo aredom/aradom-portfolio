@@ -1,15 +1,14 @@
 'use client'
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Experience', href: '#exprience' },
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '/#about' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Experience', href: '/#experience' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Portfolio', href: '/#portfolio' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -36,6 +35,7 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+ 
 
   return (
     <nav className="bg-white shadow-lg fixed w-full z-10 top-0">
@@ -43,13 +43,13 @@ export default function Navbar() {
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
-              <a href="#" className="flex items-center py-4 px-2">
+              <a href="#home" className="flex items-center py-4 px-2">
                 <span className="font-semibold text-gray-500 text-lg">AradomL.</span>
               </a>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
+            {navItems.length && navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}

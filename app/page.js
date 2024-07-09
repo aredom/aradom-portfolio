@@ -8,14 +8,16 @@ import Hero from './components/hero'
 
 export default function Home() {
   return (
+    <>
+    <Hero />
     <main className="w-11/12 m-auto pt-16">
-      <Hero />
       <About/>
       <Skills />
       <Experience />
-      <Services />
+     <Services />
       <Portfolio />
       <Contact />
     </main>
+    </>
   )
 }
