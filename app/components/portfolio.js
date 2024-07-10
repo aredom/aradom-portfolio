@@ -6,10 +6,10 @@ export default function Portfolio() {
   const [filter, setFilter] = useState('all')
 
   const portfolioItems = [
-    { id: 1, category: 'design', image: '/images/portfolio-1.jpg' },
-    { id: 2, category: 'development', image: '/images/portfolio-2.jpg' },
-    { id: 3, category: 'design', image: '/images/portfolio-3.jpg' },
-    { id: 4, category: 'development', image: '/images/portfolio-4.jpg' },
+    { id: 1, category: 'development', image: '/images/afridj.jpg' },
+    { id: 2, category: 'development', image: '/images/asky.jpg' },
+    { id: 3, category: 'development', image: '/images/niber.jpg' },
+    { id: 4, category: 'design', image: '/images/portfolio3.png' },
   ]
 
   const filteredItems = filter === 'all' 
