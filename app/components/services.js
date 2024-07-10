@@ -11,7 +11,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8  text-center">
           <ServiceItem
             icon={faLaptopCode}
-            title="Web Design"
+            title="Web development"
             description="Create stunning, responsive websites that captivate your audience and drive engagement."
           />
           <ServiceItem
