@@ -22,7 +22,7 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Aradom Leake</h1>
-            <div className="h-8 mb-4">
+            <div className="h-8 mb-4 text-blue-500">
               <TypedText strings=" Web Developer, Full Stack Developer, Web Designer, Apps Designer, Apps Developer" />
             </div>
             <p className="text-xl mb-6">Turning ideas into reality through code and design.</p>
