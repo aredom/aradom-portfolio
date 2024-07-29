@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <p className="text-lg mb-2">Find me on</p>
             <div className="flex space-x-4">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">
+              <a href="https://github.com/AredomLeake" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
               <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">
