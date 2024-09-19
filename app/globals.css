@@ -16,3 +16,27 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #1a73e8;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --link-color: #bb86fc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+a {
+  color: var(--link-color);
+}
+

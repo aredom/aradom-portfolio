@@ -5,10 +5,10 @@ import { faLaptopCode, faMobileAlt, faSearch, faEdit } from '@fortawesome/free-s
 
 export default function Services() {
   return (
-    <section className="py-16 bg-gray-100" id="services">
+    <section className="py-16 bg-gray-100 dark:bg-gray-900 transition-colors duration-300" id="services">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8  text-center">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-center">
           <ServiceItem
             icon={faLaptopCode}
             title="Web development"
@@ -37,12 +37,12 @@ export default function Services() {
 
 function ServiceItem({ icon, title, description }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
-      <div className="text-4xl text-blue-500 mb-4">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+      <div className="text-4xl text-blue-500 dark:text-blue-400 mb-4">
         <FontAwesomeIcon icon={icon} />
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-gray-800">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-100">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-400">{description}</p>
     </div>
   );
 }

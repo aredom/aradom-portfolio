@@ -8,7 +8,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-8 md:p-20 rounded-lg shadow-xl relative">
+      <div className="bg-white dark:bg-gray-800 p-8 md:p-20 rounded-lg shadow-xl relative">
         <button onClick={onClose} className="absolute top-2 right-2 text-red-500 hover:text-red-700">
           <FontAwesomeIcon icon={faTimes} />
         </button>
@@ -50,10 +50,8 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-      console.log("Response status:", response.status);
 
       const data = await response.json();
-      console.log("Response data:", data);
 
       if (response.ok) {
         setSubmitMessage("Message received! I'll be in touch soon.");
@@ -69,7 +67,6 @@ export default function Contact() {
         setIsModalOpen(true);
       }
     } catch (error) {
-      console.error("Error:", error);
       setSubmitMessage("An error occurred. Please try again later.");
       setIsModalOpen(true);
     } finally {
@@ -78,51 +75,51 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 bg-gray-100" id="contact">
+    <section className="py-16 bg-gray-100 dark:bg-gray-900" id="contact">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">Get in Touch</h2>
-        <p className="text-center text-gray-600 mb-12 md:text-lg">
+        <h2 className="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">Get in Touch</h2>
+        <p className="text-center text-gray-600 mb-12 md:text-lg dark:text-gray-400">
           Have a question or want to work together? Drop me a message!
         </p>
 
-        <form onSubmit={handleSubmit} className="bg-white shadow-xl rounded-lg p-8">
+        <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-xl rounded-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="relative">
-              <FontAwesomeIcon icon={faUser} className="absolute top-3 left-3 text-gray-400" />
+              <FontAwesomeIcon icon={faUser} className="absolute top-3 left-3 text-gray-400 dark:text-gray-400" />
               <input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-2 pl-10 border-b-2 border-gray-300 focus:border-blue-500 transition duration-300 outline-none"
+                className="w-full p-2 pl-10 border-b-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 transition duration-300 outline-none bg-transparent"
                 placeholder="Your Name"
                 required
               />
             </div>
             <div className="relative">
-              <FontAwesomeIcon icon={faEnvelope} className="absolute top-3 left-3 text-gray-400" />
+              <FontAwesomeIcon icon={faEnvelope} className="absolute top-3 left-3 text-gray-400 dark:text-gray-400" />
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-2 pl-10 border-b-2 border-gray-300 focus:border-blue-500 transition duration-300 outline-none"
+                className="w-full p-2 pl-10 border-b-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 transition duration-300 outline-none bg-transparent"
                 placeholder="Your Email"
                 required
               />
             </div>
           </div>
           <div className="mt-6 relative">
-            <FontAwesomeIcon icon={faEdit} className="absolute top-3 left-3 text-gray-400" />
+            <FontAwesomeIcon icon={faEdit} className="absolute top-3 left-3 text-gray-400 dark:text-gray-400" />
             <input
               type="text"
               id="subject"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full p-2 pl-10 border-b-2 border-gray-300 focus:border-blue-500 transition duration-300 outline-none"
+              className="w-full p-2 pl-10 border-b-2 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400 transition duration-300 outline-none bg-transparent"
               placeholder="Subject"
               required
             />
@@ -133,7 +130,7 @@ export default function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full p-2 border-2 border-gray-300 rounded focus:border-blue-500 transition duration-300 outline-none"
+              className="w-full p-2 border-2 border-gray-300 dark:border-gray-600 rounded focus:border-blue-500 dark:focus:border-blue-400 transition duration-300 outline-none bg-transparent"
               rows="6"
               placeholder="Your Message"
               required
@@ -155,8 +152,8 @@ export default function Contact() {
           <p 
             className={`text-lg ${
               submitMessage.includes("received")
-                ? "text-green-600"
-                : "text-red-600"
+                ? "text-green-600 dark:text-green-400"
+                : "text-red-600 dark:text-red-400"
             }`}
             dangerouslySetInnerHTML={{ __html: submitMessage }}
           />
