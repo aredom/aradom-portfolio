@@ -44,7 +44,7 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               {/* Update the Link to point to the CV file in the public folder */}
-              <Link href="/Aradom-Leake.pdf" download className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition duration-300">
+              <Link href="/Aradom-Leake.pdf" target="_blank" download className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition duration-300">
                 Download CV
               </Link>
               <Link href="#contact" className="bg-transparent hover:bg-white hover:text-gray-800 text-white px-6 py-3 rounded-full border-2 border-white transition duration-300">
